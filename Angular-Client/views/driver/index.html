@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<nav class="navbar navbar-light bg-light">
+  <div class="col-md-4 offset-md-4">
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" ng-model="search">
+  </form>
+</div>
+</nav>
+</div>
+</div>
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+    Drivers Championship Standings -2013
+
+	<table  class="table table-hover">
+    <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name</th> 
+    <th scope="col">Sponsor</th>
+    <th scope="col">Score</th>
+    <th scope="col">Options</th>
+  </tr>
+</thead>
+  <tr ng-click="updateScore(Driver.id)" ng-repeat="Driver in Drivers | filter:search" >
+    <td>{{Driver.id}}</td>
+    <td>{{Driver.name}}</td>
+    <td>{{Driver.sponsor}}</td>
+    <td>{{Driver.score}}</td>
+    <td>
+      <a href="#/drivers/edit/{{Driver.id}}" class="btn btn-primary">Edit</a>
+      <a href="#" ng-click="removeDriver(Driver.id)" class="btn btn-danger">Remove</a>
+    </td>
+  </tr>
+</table>
+    <a href="#/drivers/new" class="btn btn-success">Create</a>
+</div>
+</div>
+
